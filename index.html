@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo — Chatbot Clínica</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f4f7fb; color: #1a1a1a; }
+    header { background: #185FA5; color: white; padding: 20px 40px; }
+    header h1 { font-size: 22px; font-weight: 600; }
+    header p { font-size: 13px; opacity: .8; margin-top: 4px; }
+    main { max-width: 760px; margin: 40px auto; padding: 0 20px; }
+    .card { background: white; border-radius: 12px; padding: 28px 32px; margin-bottom: 20px; border: 1px solid #e8edf5; }
+    h2 { font-size: 17px; font-weight: 600; margin-bottom: 16px; color: #185FA5; }
+    p { font-size: 14px; line-height: 1.7; color: #444; margin-bottom: 12px; }
+    code { background: #f0f4ff; padding: 12px 16px; display: block; border-radius: 8px; font-size: 13px; font-family: monospace; line-height: 1.6; color: #185FA5; overflow-x: auto; border: 1px solid #dde8f8; margin: 8px 0; }
+    .badge { display: inline-block; background: #e8f5e9; color: #2e7d32; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; }
+    ul { font-size: 14px; color: #444; padding-left: 20px; line-height: 2; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Chatbot para Clínicas — Demo</h1>
+  <p>Mira el botón azul en la esquina inferior derecha</p>
+</header>
+
+<main>
+  <div class="card">
+    <span class="badge">Paso 1 — Instalar en cualquier web</span>
+    <h2>Una sola línea de código</h2>
+    <p>Pega esto justo antes del <code>&lt;/body&gt;</code> de cualquier página web:</p>
+    <code>&lt;script&gt;
+  window.ChatbotClinica = {
+    nombre: "Clínica San Rafael",
+    especialidades: "Medicina general, Cardiología, Pediatría",
+    horarios: "Lunes a Viernes 8am–8pm",
+    telefono: "55 1234 5678",
+    precios: "Consulta general $350, Especialistas desde $500",
+    seguros: "GNP, AXA, Metlife"
+  };
+&lt;/script&gt;
+&lt;script src="https://TU-PROYECTO.vercel.app/widget.js"&gt;&lt;/script&gt;</code>
+    <p>Eso es todo. El chatbot aparece flotando en la web de la clínica con su información personalizada.</p>
+  </div>
+
+  <div class="card">
+    <span class="badge">Paso 2 — Configurar en Vercel</span>
+    <h2>Variable de entorno requerida</h2>
+    <p>En tu proyecto de Vercel, ve a <strong>Settings → Environment Variables</strong> y agrega:</p>
+    <code>ANTHROPIC_API_KEY = sk-ant-api03-XXXXXXX</code>
+    <p>Obtén tu API key en <strong>console.anthropic.com</strong>. Sin esto el bot no responderá con IA.</p>
+  </div>
+
+  <div class="card">
+    <span class="badge">Lo que puede hacer el bot</span>
+    <h2>Casos de uso cubiertos</h2>
+    <ul>
+      <li>Agendar, cancelar o reprogramar citas</li>
+      <li>Informar especialidades, horarios y precios</li>
+      <li>Verificar seguros médicos aceptados</li>
+      <li>Guiar en urgencias y emergencias</li>
+      <li>Consultas sobre resultados y expediente</li>
+      <li>Transferir a agente humano cuando es necesario</li>
+      <li>Cualquier pregunta en lenguaje natural (responde IA real)</li>
+    </ul>
+  </div>
+</main>
+
+<!-- Configuración del chatbot -->
+<script>
+  window.ChatbotClinica = {
+    nombre: "ClínicaSalud Demo",
+    especialidades: "Medicina general, Cardiología, Dermatología, Pediatría, Ginecología, Psicología",
+    horarios: "Lunes a Viernes 8am–8pm, Sábados 9am–2pm",
+    telefono: "800-CLINICA",
+    direccion: "Av. Salud 123, Col. Centro",
+    precios: "Medicina general $350, Especialistas desde $450",
+    seguros: "IMSS, ISSSTE, GNP, AXA, Metlife"
+  };
+</script>
+<script src="/widget.js"></script>
+
+</body>
+</html>
